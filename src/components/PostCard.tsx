@@ -1,3 +1,6 @@
+import { FaTag } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 interface PostCardProps {
   post: {
     id: number;
@@ -39,10 +42,12 @@ const PostCard = ({post}: PostCardProps) => {
   };
 
   return (
+    <Link to={`/blog/${post.id}`}>
     <div className="post-card">
       <div className="image-container">
         <img src={image} alt={title} className="post-image" />
         <div className="category-tag">
+          <FaTag size={10} />
           <span>{category}</span>
         </div>
       </div>
@@ -79,6 +84,7 @@ const PostCard = ({post}: PostCardProps) => {
         
       </div>
     </div>
+    </Link>
   );
 };
 

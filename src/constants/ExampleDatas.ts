@@ -73,6 +73,7 @@ export const ExampleProperties = [
       gym: false,
     },
     image: "../property1.png",
+    bajo: false,
   },
   {
     id: 2,
@@ -98,6 +99,7 @@ export const ExampleProperties = [
       gym: true,
     },
     image: "../property2.png",
+    bajo: true,
   },
   {
     id: 3,
@@ -122,6 +124,7 @@ export const ExampleProperties = [
       gym: false,
     },
     image: "../property1.png",
+    bajo: true,
   }
 ];
 

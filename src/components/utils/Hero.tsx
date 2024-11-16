@@ -1,4 +1,4 @@
-const Home = () => {
+const Hero = () => {
   return (
     <div className="hero">
       <div className="hero-overlay">
@@ -11,4 +11,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

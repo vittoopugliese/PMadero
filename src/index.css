@@ -126,8 +126,7 @@ nav img {
   color: var(--grayer);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 454px) {
   .navbar-container {
     padding: 0 16px;
   }
@@ -187,8 +186,7 @@ nav img {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 540px) {
   .hero-title {
     font-size: 3rem;
   }
@@ -198,7 +196,7 @@ nav img {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 454px) {
   .hero-title {
     font-size: 2.5rem;
   }
@@ -206,6 +204,16 @@ nav img {
   .hero-subtitle {
     font-size: 1rem;
   }
+}
+
+/* Major grid */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* Properties and Card */
@@ -218,12 +226,6 @@ nav img {
   padding: 0 20px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
 .property-card {
   background-color: white;
   border-radius: 8px;
@@ -232,10 +234,12 @@ nav img {
   transition: box-shadow 0.3s ease;
   color: var(--dark1);
   cursor: pointer;
+  transition: var(--transition);
 }
 
 .property-card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scale: 1.0054;
 }
 
 .image-container {
@@ -268,11 +272,17 @@ nav img {
 
 .price-drop-badge {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  background-color: #22c55e;
-  padding: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  top: 16px;
+  left: 16px;
+  background-color: var(--green);
+  color: white;
+  padding: 6px 14px;
   border-radius: 4px;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .price-drop-badge span {
@@ -355,6 +365,11 @@ nav img {
   font-weight: 700;
   border: none;
   cursor: pointer;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
 }
 
 .whatsapp-button {
@@ -367,18 +382,18 @@ nav img {
 
 /* Posts and card */
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-}
-
 .post-card {
   background: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scale: 1.0054;
 }
 
 .image-container {
@@ -394,13 +409,17 @@ nav img {
 
 .category-tag {
   position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   top: 16px;
   left: 16px;
   background-color: #007bff;
   color: white;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 4px;
   font-size: 12px;
+  font-weight: 900;
 }
 
 .card-content {
@@ -480,55 +499,13 @@ nav img {
   color: #666;
 }
 
-.interaction-buttons {
-  display: flex;
-  gap: 16px;
-}
-
-.interaction-button {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background: none;
-  border: none;
-  color: #666;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.interaction-button i {
-  font-size: 16px;
-}
-
-.button-container {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.view-all-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
 .view-all-button:hover {
   background-color: #0056b3;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 654px) {
-  .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .featured-title {
@@ -537,6 +514,20 @@ nav img {
 
   .featured-description {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 454px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-title {
+    font-size: 20px;
+  }
+
+  .featured-description {
+    font-size: 12px;
   }
 }
 
@@ -579,5 +570,39 @@ nav img {
 }
 
 .view-all-button:hover {
-  scale: 1.054;
+  scale: 1.024;
+}
+
+/* Loading Spinner */
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-left: 8px solid var(--primary);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Message */
+
+
+.green {
+  color: var(--green);
 }

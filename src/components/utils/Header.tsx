@@ -1,4 +1,5 @@
-import { useMediaWidth } from "../hooks/useMediaWidth";
+import { Link } from "react-router-dom";
+import { useMediaWidth } from "../../hooks/useMediaWidth";
 
 const Header = () => {
   const imageWebSource = "../../navlogo.png";
@@ -10,11 +11,13 @@ const Header = () => {
 
   return (
     <nav>
-      <img src={imageSource} alt="Logo" height="42px" />
+      <Link to="/" style={{top: 2, position:'relative'}}>
+        <img src={imageSource} alt="Logo" height="42px"/>
+      </Link>
 
       <div className="nav-links">
-        <a>Propiedades</a>
-        <a>Nosotros</a>
+        <Link to="/propiedades">Propiedades</Link>
+        <Link to="/blog">Blog</Link>
       </div>
     </nav>
   );

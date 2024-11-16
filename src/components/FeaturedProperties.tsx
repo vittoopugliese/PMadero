@@ -1,7 +1,7 @@
 import {ExampleProperties} from "../constants/ExampleDatas";
 import PropertyCard from "./PropertyCard";
-import SectionSeparator from "./SectionSeparator";
-import ViewAllButton from "./ViewAllButton";
+import SectionSeparator from "./utils/SectionSeparator";
+import ViewAllButton from "./utils/ViewAllButton";
 
 export default function FeaturedProperties() {
   return (
@@ -17,7 +17,7 @@ export default function FeaturedProperties() {
         ))}
       </div>
 
-        <ViewAllButton text="Ver Todas las Propiedades" />
+        <ViewAllButton text="Ver Todas las Propiedades" route={"/propiedades"} />
     </section>
   );
 }
